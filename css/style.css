@@ -979,3 +979,38 @@ a:hover {
         font-size: 4.5rem;
     }
 }
+
+.scrolling-text-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: adds a subtle shadow for neatness */
+    border-radius: 10px; /* Optional: rounds the corners for a softer look */
+    background-color: #f0f0f0; /* Optional: adds a background color */
+    padding: 10px 0; /* Optional: adds some vertical padding */
+  }
+  
+  .scrolling-text {
+    display: inline-block;
+    font-size: 12px; 
+    padding-left: 100%; /* Start offscreen to the right */
+    animation: scroll-text 30s linear infinite; /* Adjust time for speed */
+  }
+  
+  @keyframes scroll-text {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%); /* Move the text completely across */
+    }
+  }
+  
+  .dark-mode .scrolling-text-container {
+    background-color: #333; /* Dark mode background color */
+  }
+  
+  .dark-mode .scrolling-text {
+    color: #fff; /* Dark mode text color */
+  }
